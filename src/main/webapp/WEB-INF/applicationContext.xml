@@ -11,10 +11,15 @@
 
     <security:authentication-manager>
         <security:authentication-provider>
-            <security:user-service>
-                <security:user name="percy" password="abc123" authorities="ROLE_USER"/>
-            </security:user-service>
+            <security:jdbc-user-service data-source-ref="datasource"/>
         </security:authentication-provider>
     </security:authentication-manager>
+
+    <bean id="datasource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="username" value="percy"/>
+        <property name="password" value="password"/>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/spring_security"/>
+    </bean>
 
 </beans>
