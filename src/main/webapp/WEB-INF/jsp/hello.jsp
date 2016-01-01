@@ -1,16 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: percy
-  Date: 12/30/2015
-  Time: 3:19 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
   <head>
     <title>greeting!</title>
   </head>
   <body bgcolor="#b8860b">
-    <h1>${greeting}</h1>
+    <h1>${greeting}</h1> from <sec:authentication property="principal.username"/>
   </body>
 </html>
